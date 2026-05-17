@@ -161,14 +161,14 @@ const myWorksTailwindConfig = {
                 "container-max": "1440px"
             },
             fontFamily: {
-                "headline-lg": ["Sora", "IBM Plex Sans Arabic"],
-                "display-xl": ["Sora", "IBM Plex Sans Arabic"],
-                "body-md": ["IBM Plex Sans Arabic"],
-                "headline-lg-mobile": ["Sora", "IBM Plex Sans Arabic"],
-                "label-md": ["IBM Plex Sans Arabic"],
-                "display-xl-mobile": ["Sora", "IBM Plex Sans Arabic"],
-                "body-lg": ["IBM Plex Sans Arabic"],
-                "headline-md": ["Sora", "IBM Plex Sans Arabic"]
+                "headline-lg": ["Tajawal"],
+                "display-xl": ["Tajawal"],
+                "body-md": ["Tajawal"],
+                "headline-lg-mobile": ["Tajawal"],
+                "label-md": ["Tajawal"],
+                "display-xl-mobile": ["Tajawal"],
+                "body-lg": ["Tajawal"],
+                "headline-md": ["Tajawal"]
             }
         }
     }
