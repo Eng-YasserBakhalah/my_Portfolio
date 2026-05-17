@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="images/logo3.png" rel="icon" type="image/png"/>
+<link href="animation.css" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
 
 <script src="script.js"></script>
@@ -27,15 +28,15 @@
 </div>
       
 <div class="nav-menu hidden md:flex gap-8">
-<a class="nav-section-link nav-section-link-active font-label-md text-label-md text-primary hover:text-on-surface transition-colors" href="#home">الرئيسية</a>
-<a class="nav-section-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#about">من أنا</a>
-<a class="nav-section-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#skills">مهاراتي</a>
-<a class="nav-section-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#work">أعمالي</a>
-<a class="nav-section-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#services">خدماتي</a>
-<a class="nav-section-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#contact">تواصل معي</a>
+<a class="nav-section-link nav-section-link-active font-label-md text-label-md text-primary hover:text-on-surface transition-colors animate-nav-item" href="#home" style="--i: 1;">الرئيسية</a>
+<a class="nav-section-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors animate-nav-item" href="#about" style="--i: 2;">من أنا</a>
+<a class="nav-section-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors animate-nav-item" href="#skills" style="--i: 3;">مهاراتي</a>
+<a class="nav-section-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors animate-nav-item" href="#work" style="--i: 4;">أعمالي</a>
+<a class="nav-section-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors animate-nav-item" href="#services" style="--i: 5;">خدماتي</a>
+<a class="nav-section-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors animate-nav-item" href="#contact" style="--i: 6;">تواصل معي</a>
 </div>
 
-        <a class="scroll-link bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-full hover:scale-105 hover:shadow-lg transition-all duration-300 active:scale-95" href="#contact" style="color: black;">بدء مشروع</a>     
+        <a class="scroll-link bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-full hover:scale-105 hover:shadow-lg transition-all duration-300 active:scale-95 animate-nav-item" href="#contact" style="color: black; --i: 7;">بدء مشروع</a>     
         
 </nav>
 <!-- Hero Section -->
@@ -45,8 +46,8 @@
 <div class="absolute bottom-1/4 left-0 w-80 h-80 bg-tertiary/20 rounded-full blur-[100px] -z-10"></div>
 <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
 <!-- Left Content -->
-<div class="order-2 lg:order-1 space-y-8">
-<div class="space-y-4">
+<div class="order-2 lg:order-1 space-y-8 animate-hero-copy">
+<div class="space-y-4" style="--i: 1;">
 <h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-surface leading-tight">
                         ياسر باخلعه
                     </h1>
@@ -57,8 +58,8 @@
                         أصمم تجارب رقمية احترافية وأطوّر أنظمة حديثة تجمع بين الأداء العالي والجمال البصري.
                     </p>
 </div>
-<div class="flex flex-wrap gap-4">
-<a class="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md text-label-md flex items-center gap-2 hover:scale-105 shadow-[0_0_20px_rgba(142,213,255,0.3)] transition-all" href="file/Yasser%20Bakhalah.pdf" rel="noopener noreferrer" target="_blank">
+<div class="flex flex-wrap gap-4" style="--i: 2;">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md text-label-md flex items-center gap-2 hover:scale-105 shadow-[0_0_20px_rgba(142,213,255,0.3)] transition-all animate-glow-pulse" href="file/Yasser%20Bakhalah.pdf" rel="noopener noreferrer" target="_blank">
                         استعرض CV
                         <span class="material-symbols-outlined">arrow_back</span>
 </a>
@@ -68,10 +69,10 @@
 </div>
 </div>
 <!-- Right Visual -->
-<div class="order-1 lg:order-2 relative">
+<div class="order-1 lg:order-2 relative animate-hero-visual">
 <div class="relative w-full max-w-md mx-auto">
 <div class="absolute inset-0 bg-gradient-to-tr from-primary to-tertiary rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
-<div class="relative z-10 p-2 rounded-3xl neon-border-gradient">
+<div class="relative z-10 p-2 rounded-3xl neon-border-gradient animate-soft-float">
 <img alt="ياسر" class="w-full aspect-[0.75] object-cover rounded-[1.4rem]" data-alt="A professional high-end portrait of an Arabic male designer in his late twenties, sitting in a dark, futuristic tech office. He has a sharp, confident expression, with soft cinematic lighting illuminating his features in tones of deep blue and electric cyan. The background shows blurred high-tech monitors and neon accents, creating a sense of luxury and technical expertise. The image is crisp, detailed, and projects a premium brand identity." src="images/programmer.png"/>
 </div>
 </div>
@@ -207,9 +208,9 @@
                     <span class="material-symbols-outlined">arrow_back</span>
 </a>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-card-grid">
 <!-- Project Card 1 -->
-<div class="lg:col-span-2 group relative overflow-hidden rounded-3xl glass-card">
+<div class="lg:col-span-2 group relative overflow-hidden rounded-3xl glass-card" style="--i: 1;">
 <div class="h-[400px] w-full bg-surface-container relative">
 <img alt="نظام إدارة الموارد البشرية" class="absolute inset-0 h-full w-full object-cover" src="images/acaemy.png"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10"></div>
@@ -225,7 +226,7 @@
 </div>
 </div>
 <!-- Project Card 2 -->
-<div class="group relative overflow-hidden rounded-3xl glass-card">
+<div class="group relative overflow-hidden rounded-3xl glass-card" style="--i: 2;">
 <div class="h-[400px] w-full bg-surface-container relative">
 <img alt="منصة مقارنة السيارات" class="absolute inset-0 h-full w-full object-cover" src="images/graphic.png"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10"></div>
@@ -242,7 +243,7 @@
 </div>
 </div>
 <!-- Project Card 3 -->
-<div class="group relative overflow-hidden rounded-3xl glass-card">
+<div class="group relative overflow-hidden rounded-3xl glass-card" style="--i: 3;">
 <div class="h-[400px] w-full bg-surface-container relative">
 <img alt="لوحة تحكم الشركات" class="absolute inset-0 h-full w-full object-cover" src="images/graphic1.png"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10"></div>
@@ -259,7 +260,7 @@
 </div>
 </div>
 <!-- Project Card 4 -->
-<div class="lg:col-span-2 group relative overflow-hidden rounded-3xl glass-card">
+<div class="lg:col-span-2 group relative overflow-hidden rounded-3xl glass-card" style="--i: 4;">
 <div class="h-[400px] w-full bg-surface-container relative">
 <a class="absolute inset-0 z-[5]" href="images/anqtek.png" rel="noopener noreferrer" target="_blank" aria-label="عرض صورة تطبيق اناقتك بالحجم الكامل">
 <img alt="تطبيق اناقتك" class="h-full w-full object-cover" src="images/anqtek.png"/>

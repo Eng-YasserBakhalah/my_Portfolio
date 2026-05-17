@@ -190,6 +190,40 @@ document.addEventListener("DOMContentLoaded", () => {
     const workSections = Array.from(document.querySelectorAll(".work-category-section"));
     const worksEmptyState = document.getElementById("works-empty-state");
 
+    const setupScrollReveal = () => {
+        const revealTargets = Array.from(
+            document.querySelectorAll(
+                "section, footer, .glass-card, .work-category-section h2, .work-category-section h3"
+            )
+        ).filter((element) => {
+            return !element.closest(".animate-hero-copy") &&
+                !element.classList.contains("animate-hero-visual") &&
+                !element.classList.contains("animate-soft-float") &&
+                !element.classList.contains("animate-nav-item") &&
+                !element.closest(".nav-menu") &&
+                !element.matches("nav");
+        });
+
+        revealTargets.forEach((element, index) => {
+            element.classList.add("reveal-on-scroll");
+            element.style.setProperty("--reveal-order", String(index % 6));
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.14,
+            rootMargin: "0px 0px -8% 0px"
+        });
+
+        revealTargets.forEach((element) => observer.observe(element));
+    };
+
     if (page === "portfolio" && nav) {
         const navLinks = Array.from(nav.querySelectorAll('.nav-menu a[href^="#"]'));
         const normalizedLinks = navLinks.filter((link) => {
@@ -353,4 +387,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         applyFilter("all");
     }
+
+    setupScrollReveal();
 });

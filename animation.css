@@ -1,0 +1,124 @@
+.animate-nav-item {
+    opacity: 0;
+    animation: navSlideIn 0.85s ease forwards;
+    animation-delay: calc(0.08s * var(--i, 1));
+}
+
+.animate-hero-copy > * {
+    opacity: 0;
+    animation: heroFadeUp 0.9s ease forwards;
+    animation-delay: calc(0.16s * var(--i, 1));
+}
+
+.animate-hero-visual {
+    opacity: 0;
+    animation: heroVisualIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 0.35s;
+}
+
+.animate-card-grid > * {
+    opacity: 0;
+    animation: cardRiseIn 0.85s ease forwards;
+    animation-delay: calc(0.1s * var(--i, 1));
+}
+
+.animate-soft-float {
+    animation: softFloat 5.5s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+    animation: glowPulse 4s ease-in-out infinite;
+}
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition-delay: calc(0.08s * var(--reveal-order, 0));
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes navSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(26px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroVisualIn {
+    0% {
+        opacity: 0;
+        transform: translateY(28px) scale(0.92) rotate(-3deg);
+    }
+    65% {
+        opacity: 1;
+        transform: translateY(-4px) scale(1.01) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+}
+
+@keyframes cardRiseIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes softFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 rgba(142, 213, 255, 0.08);
+    }
+    50% {
+        box-shadow: 0 0 32px rgba(142, 213, 255, 0.18);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-nav-item,
+    .animate-hero-copy > *,
+    .animate-hero-visual,
+    .animate-card-grid > *,
+    .animate-soft-float,
+    .animate-glow-pulse,
+    .reveal-on-scroll {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
