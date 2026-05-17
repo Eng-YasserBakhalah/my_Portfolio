@@ -1,0 +1,218 @@
+html[data-page="my-works"] body {
+    background-color: #050816;
+    color: #dfe1f6;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    overflow-x: hidden;
+}
+
+html[data-page="my-works"] .glass-card {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(142, 213, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html[data-page="my-works"] .glass-card:hover {
+    border-color: rgba(142, 213, 255, 0.4);
+    box-shadow: 0 0 30px rgba(142, 213, 255, 0.1);
+    transform: translateY(-8px);
+}
+
+html[data-page="my-works"] .neon-text-glow {
+    text-shadow: 0 0 10px rgba(142, 213, 255, 0.5);
+}
+
+html[data-page="my-works"] .neon-border-glow {
+    box-shadow: 0 0 15px rgba(208, 188, 255, 0.2);
+}
+
+html[data-page="my-works"] .radial-gradient-bg {
+    background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.05) 0%, transparent 70%);
+}
+
+html[data-page="my-works"] .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+html[data-page="portfolio"] body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #0f1321;
+    color: #dfe1f6;
+    overflow-x: hidden;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .font-sora {
+    font-family: 'Tajawal', sans-serif;
+}
+
+html[data-page="portfolio"] .glass-card {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(142, 213, 255, 0.1);
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .neon-glow-primary {
+    box-shadow: 0 0 20px rgba(142, 213, 255, 0.15);
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .neon-border-gradient {
+    border: 1px solid transparent;
+    background: linear-gradient(#0f1321, #0f1321) padding-box,
+        linear-gradient(to right, #8ed5ff, #54ddfc) border-box;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .text-gradient {
+    background: linear-gradient(to left, #8ed5ff, #54ddfc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .site-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    min-width: 0;
+    text-decoration: none;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .site-logo-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    padding: 0.5rem;
+    border-radius: 1.1rem;
+    border: 1px solid rgba(142, 213, 255, 0.24);
+    box-shadow: 0 0 24px rgba(142, 213, 255, 0.14);
+    overflow: hidden;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .site-logo-image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: 2.9rem;
+    object-fit: contain;
+    object-position: center;
+    transform: translateX(-2%) scale(1.5);
+    transform-origin: center;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 10px rgba(142, 213, 255, 0.18));
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .site-logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    line-height: 1.1;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .site-logo-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #f3f7ff;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .site-logo-role {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(223, 225, 246, 0.72);
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .footer-logo {
+    display: block;
+    width: auto;
+    height: 6rem;
+    max-width: min(220px, 42vw);
+    object-fit: contain;
+    filter: drop-shadow(0 0 14px rgba(142, 213, 255, 0.16));
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-menu .nav-section-link {
+    display: inline-block;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-menu .nav-section-link-active {
+    color: #8ed5ff !important;
+    border-bottom-color: #8ed5ff !important;
+    box-shadow: none;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.7rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(142, 213, 255, 0.12);
+    background: rgba(27, 31, 46, 0.72);
+    color: #87929a;
+    font-size: 0.95rem;
+    line-height: 1;
+    transition: transform 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .footer-social-link:hover {
+    transform: translateY(-2px);
+    color: #dfe1f6;
+    border-color: rgba(142, 213, 255, 0.28);
+    box-shadow: 0 0 18px rgba(142, 213, 255, 0.12);
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .footer-social-logo {
+    display: block;
+    width: 1.1rem;
+    height: 1.1rem;
+    object-fit: contain;
+    color: #54ddfc;
+    filter: drop-shadow(0 0 8px rgba(142, 213, 255, 0.14));
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .form-feedback {
+    min-height: 1.5rem;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: rgba(223, 225, 246, 0.82);
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .form-feedback.is-success {
+    color: #54ddfc;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .form-feedback.is-error {
+    color: #ffb4ab;
+}
+
+@media (max-width: 767px) {
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .site-logo-badge {
+        width: 2.85rem;
+        height: 2.85rem;
+        border-radius: 1rem;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .site-logo-name {
+        font-size: 0.98rem;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .site-logo-role {
+        font-size: 0.64rem;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .footer-logo {
+        height: 3.4rem;
+        max-width: 180px;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .footer-social-link {
+        padding: 0.65rem 0.9rem;
+        font-size: 0.88rem;
+    }
+}
