@@ -184,6 +184,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactForm = document.getElementById("contact-form");
     const contactSubmit = document.getElementById("contact-submit");
     const formFeedback = document.getElementById("form-feedback");
+    const worksFilters = document.getElementById("works-filters");
+    const workSections = Array.from(document.querySelectorAll(".work-category-section"));
+    const worksEmptyState = document.getElementById("works-empty-state");
 
     if (page === "portfolio" && nav) {
         const navLinks = Array.from(nav.querySelectorAll('.nav-menu a[href^="#"]'));
@@ -299,5 +302,53 @@ document.addEventListener("DOMContentLoaded", () => {
                 contactSubmit.style.opacity = "1";
             }
         });
+    }
+
+    if (page === "my-works" && worksFilters) {
+        const filterButtons = Array.from(worksFilters.querySelectorAll("[data-filter]"));
+
+        const setActiveFilterButton = (activeFilter) => {
+            filterButtons.forEach((button) => {
+                const isActive = button.dataset.filter === activeFilter;
+
+                button.classList.toggle("bg-primary", isActive);
+                button.classList.toggle("text-on-primary", isActive);
+                button.classList.toggle("font-bold", isActive);
+                button.classList.toggle("shadow-[0_0_20px_rgba(142,213,255,0.3)]", isActive);
+
+                button.classList.toggle("glass-card", !isActive);
+                button.classList.toggle("text-on-surface-variant", !isActive);
+                button.classList.toggle("hover:text-primary", !isActive);
+                button.classList.toggle("font-medium", !isActive);
+            });
+        };
+
+        const applyFilter = (filter) => {
+            let visibleCount = 0;
+
+            workSections.forEach((section) => {
+                const isVisible = filter === "all" || section.dataset.category === filter;
+                section.classList.toggle("hidden", !isVisible);
+
+                if (isVisible) {
+                    visibleCount += 1;
+                }
+            });
+
+            if (worksEmptyState) {
+                const showEmpty = filter !== "all" && visibleCount === 0;
+                worksEmptyState.classList.toggle("hidden", !showEmpty);
+            }
+
+            setActiveFilterButton(filter);
+        };
+
+        filterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                applyFilter(button.dataset.filter || "all");
+            });
+        });
+
+        applyFilter("all");
     }
 });
