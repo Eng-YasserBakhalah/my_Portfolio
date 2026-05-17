@@ -90,6 +90,8 @@ const portfolioTailwindConfig = {
     }
 };
 
+//سكريبت صفحة ال index
+
 const myWorksTailwindConfig = {
     darkMode: "class",
     theme: {
