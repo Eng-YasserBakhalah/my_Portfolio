@@ -182,6 +182,9 @@ window.tailwind.config = document.documentElement.dataset.page === "my-works"
 document.addEventListener("DOMContentLoaded", () => {
     const page = document.documentElement.dataset.page;
     const nav = document.querySelector("nav");
+    const mobileNavToggle = nav?.querySelector(".mobile-nav-toggle") || null;
+    const mobileNavPanel = nav?.querySelector(".nav-menu") || null;
+    const mobileNavIcon = mobileNavToggle?.querySelector(".material-symbols-outlined") || null;
     const scrollLinks = Array.from(document.querySelectorAll('a.scroll-link[href^="#"]'));
     const contactForm = document.getElementById("contact-form");
     const contactSubmit = document.getElementById("contact-submit");
@@ -223,6 +226,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
         revealTargets.forEach((element) => observer.observe(element));
     };
+
+    const isMobileViewport = () => window.matchMedia("(max-width: 767px)").matches;
+
+    const setMobileMenuState = (isOpen) => {
+        if (!nav || !mobileNavToggle || !mobileNavPanel) {
+            return;
+        }
+
+        nav.classList.toggle("is-menu-open", isOpen);
+        mobileNavToggle.setAttribute("aria-expanded", String(isOpen));
+
+        if (mobileNavIcon) {
+            mobileNavIcon.textContent = isOpen ? "close" : "menu";
+        }
+    };
+
+    if (nav && mobileNavToggle && mobileNavPanel) {
+        setMobileMenuState(false);
+
+        mobileNavToggle.addEventListener("click", () => {
+            setMobileMenuState(!nav.classList.contains("is-menu-open"));
+        });
+
+        mobileNavPanel.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                if (isMobileViewport()) {
+                    setMobileMenuState(false);
+                }
+            });
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!isMobileViewport() || !nav.classList.contains("is-menu-open")) {
+                return;
+            }
+
+            if (!nav.contains(event.target)) {
+                setMobileMenuState(false);
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (!isMobileViewport()) {
+                setMobileMenuState(false);
+            }
+        });
+    }
 
     if (page === "portfolio" && nav) {
         const navLinks = Array.from(nav.querySelectorAll('.nav-menu a[href^="#"]'));
@@ -268,6 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 event.preventDefault();
                 scrollToSection(target);
                 setActiveLink(targetId);
+                setMobileMenuState(false);
             });
         });
 
@@ -283,6 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 event.preventDefault();
                 scrollToSection(target);
                 setActiveLink(targetId);
+                setMobileMenuState(false);
             });
         });
 

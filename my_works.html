@@ -20,24 +20,29 @@
 <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-3 rounded-full mt-4 mx-auto w-[90%] max-w-7xl bg-surface/80 backdrop-blur-xl border border-outline-variant/20 shadow-[0_0_20px_rgba(142,213,255,0.15)]">
 <div class="site-logo-wrap">
 <div class="site-logo-badge">
-<a href="#home"><img alt="logo" class="site-logo-image" src="images/logo2.png"/></a>
+<a href="index.html#home"><img alt="logo" class="site-logo-image" src="images/logo2.png"/></a>
 </div>
 <div class="site-logo-text">
 <span class="site-logo-name font-sora">Yasser</span>
 <span class="site-logo-role">Designer &amp; Developer</span>
 </div>
 </div>
+
+<button aria-controls="primary-navigation" aria-expanded="false" aria-label="فتح القائمة" class="mobile-nav-toggle md:hidden" type="button">
+<span class="material-symbols-outlined">menu</span>
+</button>
       
-<div class="nav-menu hidden md:flex gap-8">
+<div class="nav-menu hidden md:flex gap-8" id="primary-navigation">
 <a class="nav-section-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors animate-nav-item" href="index.html#home" style="--i: 1;">الرئيسية</a>
 <a class="nav-section-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors animate-nav-item" href="index.html#about" style="--i: 2;">من أنا</a>
 <a class="nav-section-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors animate-nav-item" href="index.html#skills" style="--i: 3;">مهاراتي</a>
 <a class="nav-section-link nav-section-link-active font-label-md text-label-md text-primary hover:text-on-surface transition-colors animate-nav-item" href="my_works.html" style="--i: 4;">أعمالي</a>
 <a class="nav-section-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors animate-nav-item" href="index.html#services" style="--i: 5;">خدماتي</a>
 <a class="nav-section-link font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors animate-nav-item" href="index.html#contact" style="--i: 6;">تواصل معي</a>
+<a class="nav-mobile-cta bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:scale-105 hover:shadow-lg transition-all duration-300 active:scale-95" href="index.html#contact" style="color: black;">بدء مشروع</a>
 </div>
 
-        <a class="scroll-link bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-full hover:scale-105 hover:shadow-lg transition-all duration-300 active:scale-95 animate-nav-item" href="index.html#contact" style="color: black; --i: 7;">بدء مشروع</a>     
+        <a class="nav-cta bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-full hover:scale-105 hover:shadow-lg transition-all duration-300 active:scale-95 animate-nav-item" href="index.html#contact" style="color: black; --i: 7;">بدء مشروع</a>     
         
 </nav>
 <main class="relative pt-40 overflow-hidden">

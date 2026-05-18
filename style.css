@@ -145,6 +145,36 @@ html[data-page="portfolio"] .glass-card {
     box-shadow: none;
 }
 
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .mobile-nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2.9rem;
+    height: 2.9rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(142, 213, 255, 0.18);
+    background: rgba(27, 31, 46, 0.78);
+    color: #dfe1f6;
+    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .mobile-nav-toggle:hover {
+    background: rgba(42, 49, 72, 0.92);
+    border-color: rgba(142, 213, 255, 0.34);
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .mobile-nav-toggle:active {
+    transform: scale(0.96);
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-mobile-cta {
+    display: none;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) nav.is-menu-open .mobile-nav-toggle .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+}
+
 :is(html[data-page="portfolio"], html[data-page="my-works"]) .footer-social-link {
     display: inline-flex;
     align-items: center;
@@ -323,12 +353,60 @@ html[data-page="my-works"] .work-category-section .glass-card {
         font-size: 0.64rem;
     }
 
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .mobile-nav-toggle {
+        display: inline-flex;
+        order: 1;
+        margin-inline-end: auto;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .site-logo-wrap {
+        order: 2;
+        margin-inline-start: auto;
+        flex: 0 1 auto;
+    }
+
     :is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-menu {
-        gap: 0.7rem 1rem;
+        display: none !important;
+        order: 3;
+        width: 100%;
+        margin-top: 0.4rem;
+        padding: 0.85rem;
+        border-radius: 1.35rem;
+        background: rgba(15, 23, 42, 0.92);
+        border: 1px solid rgba(142, 213, 255, 0.14);
+        box-shadow: 0 18px 40px rgba(2, 8, 23, 0.35);
+        gap: 0.35rem;
+        flex-direction: column;
+        align-items: stretch;
     }
 
     :is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-menu .nav-section-link {
-        font-size: 0.92rem;
+        font-size: 0.95rem;
+        width: 100%;
+        padding: 0.8rem 0.9rem;
+        border-bottom-width: 0;
+        border-radius: 0.95rem;
+        text-align: right;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) nav.is-menu-open .nav-menu {
+        display: flex !important;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-menu .nav-section-link-active {
+        background: rgba(84, 221, 252, 0.1);
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-cta {
+        display: none;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-mobile-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 0.4rem;
     }
 
     :is(html[data-page="portfolio"], html[data-page="my-works"]) nav > .scroll-link,
@@ -504,11 +582,7 @@ html[data-page="my-works"] .work-category-section .glass-card {
     }
 
     :is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-menu {
-        gap: 0.6rem 0.9rem;
-    }
-
-    :is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-menu .nav-section-link {
-        font-size: 0.86rem;
+        padding: 0.75rem;
     }
 
     html[data-page="portfolio"] header {
