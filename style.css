@@ -191,7 +191,124 @@ html[data-page="portfolio"] .glass-card {
     color: #ffb4ab;
 }
 
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) nav {
+    gap: 1rem;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) nav > * {
+    min-width: 0;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-menu {
+    min-width: 0;
+}
+
+:is(html[data-page="portfolio"], html[data-page="my-works"]) .glass-card {
+    min-width: 0;
+}
+
+html[data-page="portfolio"] header .container,
+html[data-page="my-works"] main > header,
+html[data-page="my-works"] .work-category-section,
+html[data-page="my-works"] #works-empty-state {
+    min-width: 0;
+}
+
+html[data-page="portfolio"] #work .glass-card,
+html[data-page="my-works"] .work-category-section .glass-card {
+    overflow: hidden;
+}
+
+@media (max-width: 1279px) {
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) nav {
+        width: min(94%, 72rem);
+        padding-inline: 1.5rem;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-menu {
+        gap: 1.25rem;
+    }
+
+    html[data-page="portfolio"] #about .sticky {
+        position: static;
+    }
+}
+
+@media (max-width: 1023px) {
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.85rem;
+        padding-block: 0.85rem;
+        border-radius: 1.75rem;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .site-logo-wrap {
+        flex: 1 1 auto;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-menu {
+        display: flex !important;
+        order: 3;
+        flex: 1 1 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.85rem 1.4rem;
+        padding-top: 0.35rem;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) nav > .scroll-link,
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) nav > a.scroll-link {
+        flex-shrink: 0;
+    }
+
+    html[data-page="portfolio"] header {
+        padding-top: 11rem;
+        min-height: auto;
+        padding-bottom: 5rem;
+    }
+
+    html[data-page="portfolio"] #about .grid,
+    html[data-page="portfolio"] #contact .grid {
+        gap: 2rem;
+    }
+
+    html[data-page="portfolio"] #work .absolute.bottom-8.right-8,
+    html[data-page="portfolio"] .group .absolute.bottom-8.right-8 {
+        right: 1.5rem;
+        bottom: 1.5rem;
+    }
+
+    html[data-page="portfolio"] section,
+    html[data-page="my-works"] section {
+        scroll-margin-top: 8.5rem;
+    }
+
+    html[data-page="my-works"] main {
+        padding-top: 12rem;
+    }
+
+    html[data-page="my-works"] #works-filters {
+        gap: 0.85rem;
+    }
+}
+
 @media (max-width: 767px) {
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) nav {
+        width: min(94%, 100%);
+        margin-top: 0.75rem;
+        padding-inline: 1rem;
+        padding-block: 0.9rem;
+        border-radius: 1.35rem;
+    }
+
     :is(html[data-page="portfolio"], html[data-page="my-works"]) .site-logo-badge {
         width: 2.85rem;
         height: 2.85rem;
@@ -206,6 +323,22 @@ html[data-page="portfolio"] .glass-card {
         font-size: 0.64rem;
     }
 
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-menu {
+        gap: 0.7rem 1rem;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-menu .nav-section-link {
+        font-size: 0.92rem;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) nav > .scroll-link,
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) nav > a.scroll-link {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding-inline: 1rem;
+    }
+
     :is(html[data-page="portfolio"], html[data-page="my-works"]) .footer-logo {
         height: 3.4rem;
         max-width: 180px;
@@ -214,5 +347,186 @@ html[data-page="portfolio"] .glass-card {
     :is(html[data-page="portfolio"], html[data-page="my-works"]) .footer-social-link {
         padding: 0.65rem 0.9rem;
         font-size: 0.88rem;
+    }
+
+    html[data-page="portfolio"] header {
+        padding-top: 12.5rem;
+        padding-bottom: 4.5rem;
+    }
+
+    html[data-page="portfolio"] header .container {
+        gap: 2rem;
+    }
+
+    html[data-page="portfolio"] header .container > div:first-child {
+        text-align: center;
+    }
+
+    html[data-page="portfolio"] header .container > div:first-child p {
+        margin-inline: auto;
+    }
+
+    html[data-page="portfolio"] header .container > div:first-child .flex.flex-wrap.gap-4 {
+        justify-content: center;
+    }
+
+    html[data-page="portfolio"] header .container > div:first-child .flex.flex-wrap.gap-4 > a {
+        width: min(100%, 19rem);
+        justify-content: center;
+    }
+
+    html[data-page="portfolio"] header .max-w-md {
+        max-width: min(100%, 21rem);
+    }
+
+    html[data-page="portfolio"] #about .glass-card,
+    html[data-page="portfolio"] #skills .glass-card,
+    html[data-page="portfolio"] #services .glass-card,
+    html[data-page="portfolio"] #contact .glass-card,
+    html[data-page="my-works"] .glass-card {
+        border-radius: 1.6rem;
+    }
+
+    html[data-page="portfolio"] #work .h-\[400px\] {
+        height: 22rem;
+    }
+
+    html[data-page="portfolio"] #work .absolute.bottom-8.right-8,
+    html[data-page="portfolio"] .group .absolute.bottom-8.right-8 {
+        right: 1rem;
+        bottom: 1rem;
+        left: 1rem;
+    }
+
+    html[data-page="portfolio"] #work .absolute.bottom-8.right-8 p,
+    html[data-page="portfolio"] #work .absolute.bottom-8.right-8 h3 {
+        max-width: none;
+    }
+
+    html[data-page="portfolio"] .relative.max-w-4xl.mx-auto.space-y-12 {
+        padding-right: 0;
+    }
+
+    html[data-page="portfolio"] .absolute.right-8.md\:right-1\/2.top-0.bottom-0 {
+        right: 0.85rem;
+    }
+
+    html[data-page="portfolio"] .relative.flex.items-center.md\:justify-between.group {
+        align-items: flex-start;
+    }
+
+    html[data-page="portfolio"] .relative.flex.items-center.md\:justify-between.group > .glass-card {
+        width: 100%;
+        margin-right: 2.5rem;
+        margin-left: 0;
+    }
+
+    html[data-page="portfolio"] .relative.flex.items-center.md\:justify-between.group > .absolute.right-8.md\:right-1\/2 {
+        right: 0.85rem;
+    }
+
+    html[data-page="portfolio"] #contact .space-y-8 > .flex.items-center.gap-4:last-child {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    html[data-page="portfolio"] #contact .space-y-8 > .flex.items-center.gap-4:last-child .flex.gap-4 {
+        flex-wrap: wrap;
+    }
+
+    html[data-page="portfolio"] footer,
+    html[data-page="my-works"] footer {
+        padding-inline: 1rem;
+        padding-block: 2rem;
+        text-align: center;
+    }
+
+    html[data-page="portfolio"] footer > div,
+    html[data-page="my-works"] footer > div {
+        justify-content: center;
+    }
+
+    html[data-page="portfolio"] body > button.fixed.bottom-8.right-8,
+    html[data-page="my-works"] body > button.fixed.bottom-8.right-8 {
+        width: 3.5rem;
+        height: 3.5rem;
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    html[data-page="portfolio"] body > button.fixed.bottom-8.right-8 .absolute.right-20,
+    html[data-page="my-works"] body > button.fixed.bottom-8.right-8 .absolute.right-20 {
+        display: none;
+    }
+
+    html[data-page="my-works"] main {
+        padding-top: 13rem;
+    }
+
+    html[data-page="my-works"] main > header {
+        margin-bottom: 3rem;
+    }
+
+    html[data-page="my-works"] #works-filters button {
+        width: calc(50% - 0.5rem);
+        min-width: 9rem;
+        padding-inline: 1rem;
+    }
+
+    html[data-page="my-works"] .work-category-section > div:first-child {
+        gap: 0.85rem;
+        margin-bottom: 2rem;
+        padding-right: 1rem;
+    }
+
+    html[data-page="my-works"] .work-category-section .p-8 {
+        padding: 1.4rem;
+    }
+
+    html[data-page="my-works"] .work-category-section .h-\[450px\] {
+        height: 22rem;
+    }
+
+    html[data-page="my-works"] .work-category-section .absolute.bottom-0.p-8.w-full .flex.justify-between.items-end {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    html[data-page="my-works"] section .p-12.md\:p-20 {
+        padding: 2rem 1.25rem;
+    }
+}
+
+@media (max-width: 479px) {
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .site-logo-text {
+        display: none;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-menu {
+        gap: 0.6rem 0.9rem;
+    }
+
+    :is(html[data-page="portfolio"], html[data-page="my-works"]) .nav-menu .nav-section-link {
+        font-size: 0.86rem;
+    }
+
+    html[data-page="portfolio"] header {
+        padding-top: 11.75rem;
+    }
+
+    html[data-page="portfolio"] #skills .grid.grid-cols-2,
+    html[data-page="portfolio"] #services .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4,
+    html[data-page="my-works"] #works-filters {
+        gap: 0.75rem;
+    }
+
+    html[data-page="portfolio"] #skills .grid.grid-cols-2 > div,
+    html[data-page="my-works"] #works-filters button {
+        width: 100%;
+    }
+
+    html[data-page="my-works"] main {
+        padding-top: 12rem;
     }
 }
