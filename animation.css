@@ -12,8 +12,9 @@
 
 .animate-hero-visual {
     opacity: 0;
-    animation: heroVisualIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    animation-delay: 0.35s;
+    transform-origin: center;
+    animation: heroVisualIn 1.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 0.28s;
 }
 
 .animate-card-grid > * {
@@ -23,7 +24,7 @@
 }
 
 .animate-soft-float {
-    animation: softFloat 5.5s ease-in-out infinite;
+    animation: softFloat 6.8s ease-in-out infinite;
 }
 
 .animate-glow-pulse {
@@ -67,14 +68,22 @@
 @keyframes heroVisualIn {
     0% {
         opacity: 0;
-        transform: translateY(28px) scale(0.92) rotate(-3deg);
+        filter: blur(8px);
+        transform: translateY(42px) scale(0.88) rotate(-7deg);
+    }
+    38% {
+        opacity: 0.7;
+        filter: blur(2px);
+        transform: translateY(-8px) scale(1.03) rotate(1.2deg);
     }
     65% {
         opacity: 1;
-        transform: translateY(-4px) scale(1.01) rotate(0deg);
+        filter: blur(0);
+        transform: translateY(4px) scale(0.985) rotate(-0.5deg);
     }
     100% {
         opacity: 1;
+        filter: blur(0);
         transform: translateY(0) scale(1) rotate(0deg);
     }
 }
@@ -92,10 +101,16 @@
 
 @keyframes softFloat {
     0%, 100% {
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate3d(-4px, -10px, 0) rotate(-0.8deg);
     }
     50% {
-        transform: translateY(-8px);
+        transform: translate3d(0, -16px, 0) rotate(0.6deg);
+    }
+    75% {
+        transform: translate3d(4px, -8px, 0) rotate(-0.4deg);
     }
 }
 
